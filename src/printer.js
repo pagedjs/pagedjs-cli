@@ -166,7 +166,7 @@ class Printer extends EventEmitter {
 
 			for (const style of this.styles) {
 				await page.addStyleTag({
-					path: style
+					[this.isUrl(style) ? "url" : "path"]: style
 				});
 			}
 
@@ -176,7 +176,7 @@ class Printer extends EventEmitter {
 
 			for (const script of this.additionalScripts) {
 				await page.addScriptTag({
-					path: script
+					[this.isUrl(script) ? "url" : "path"]: script
 				});
 			}
 
@@ -384,6 +384,15 @@ class Printer extends EventEmitter {
 			return true;
 		}
 		return this.allowedDomains.includes(domain);
+	}
+
+	isUrl(resource) {
+		try {
+			new URL(resource);
+			return true;
+		} catch {
+			return false;
+		}
 	}
 
 }
