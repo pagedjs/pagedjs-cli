@@ -48,6 +48,7 @@ pagedjs-cli ./path/to/index.html -o result.pdf
 --style <style>                      Path to CSS stylesheets to be added before rendering
                                       (default: [])
 --warn                               Enable warning logs
+--extra-header <header:value>        Header to be added to the page request. (default: [])
 --help                               display help for command
 ```
 
