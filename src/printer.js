@@ -19,7 +19,7 @@ class Printer extends EventEmitter {
 		super();
 
 		this.debug = typeof options.debug !== "undefined" ? options.debug : false;
-		this.headless = options.headless !== false;
+		this.headless = options.headless !== false ? "new" : false;
 		this.allowLocal = options.allowLocal || false;
 		this.allowRemote = typeof options.allowRemote !== "undefined" ? options.allowRemote : true;
 		this.additionalScripts = options.additionalScripts || [];
