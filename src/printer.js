@@ -34,6 +34,7 @@ class Printer extends EventEmitter {
 		this.emulateMedia = options.emulateMedia || "print";
 		this.styles = options.styles || [];
 		this.enableWarnings = options.enableWarnings || false;
+		this.extraHTTPHeaders = options.extraHTTPHeaders || {};
 
 		this.pages = [];
 
@@ -81,6 +82,8 @@ class Printer extends EventEmitter {
 		try {
 			const page = await this.browser.newPage();
 			page.setDefaultTimeout(this.timeout);
+
+			page.setExtraHTTPHeaders(this.extraHTTPHeaders);
 
 			await page.emulateMediaType(this.emulateMedia);
 

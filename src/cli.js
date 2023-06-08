@@ -44,6 +44,7 @@ program
 	.option("--media [media]", "Emulate \"print\" or \"screen\" media, defaults to print.")
 	.option("--style <style>", "Path to CSS stylesheets to be added before rendering", collect, [])
 	.option("--warn", "Enable warning logs")
+	.option("--extra-header <header:value>", "Header to be added to the page request.", collect, [])
 	.parse(process.argv);
 
 function collect(value, previous) {
@@ -65,6 +66,11 @@ try {
 	relativePath = path.resolve(dir, input);
 	allowLocal = !options.blockLocal;
 }
+
+const extraHTTPHeaders = options.extraHeader.reduce((acc, header) => {
+	const [name, ...value] = header.split(':');
+	return [ ...acc, { [name]: value.join(':') } ];
+}, []);
 
 let output;
 
@@ -120,7 +126,8 @@ if (typeof input === "string") {
 		timeout: options.timeout,
 		browserArgs: options.browserArgs,
 		emulateMedia: options.media,
-		enableWarnings: options.warn
+		enableWarnings: options.warn,
+		extraHTTPHeaders: extraHTTPHeaders
 	};
 
 	if (options.forceTransparentBackground) {
