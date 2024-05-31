@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Hyphens Test</title>
+    <meta name="author" content="Wikipedia">
+
+    <style media="print">
+      @page {
+        size: 8.5in 11in;
+        margin: 20mm 25mm;
+
+        @top-center {
+          vertical-align: bottom;
+          padding-bottom: 10mm;
+          content: string(booktitle);
+        }
+      }
+
+      @page :left {
+        margin: 20mm 60mm 20mm 60mm;
+
+        @top-left {
+          vertical-align: bottom;
+          padding-bottom: 10mm;
+          content: string(page-number, first-except);
+          letter-spacing: 0.1em;
+          margin-left: -1em;
+          font-size: 0.9em;
+       }
+
+       @bottom-left-corner {
+         content: counter(page);
+       }
+      }
+
+      @page :right {
+        margin: 20mm 60mm 20mm 60mm;
+
+        @top-right {
+          vertical-align: bottom;
+          padding-bottom: 10mm;
+          content: string(page-number, first-except);
+          letter-spacing: 0.08em;
+          margin-right: -1em;
+          font-size: 0.9em;
+       }
+
+       @bottom-right-corner {
+         content: counter(page);
+       }
+
+       @top-center{
+         content: string(booktitle);
+        }
+      }
+
+      @page cover {
+        @top-center{
+          content: none;
+         }
+      }
+
+      section:nth-child(1) h1 {
+        string-set: booktitle content(text);
+      }
+
+      section {
+        break-before: right;
+        break-after: always;
+      }
+
+
+      body {
+        font-size: 1em;
+        line-height: 1.33em;
+        font-family: serif;
+        font-variant-numeric: oldstyle-nums;
+        text-align: justify;
+        hyphens:auto
+      }
+
+    </style>
+</head>
+<body>
+    <section class="body-rw Chapter-rw">
+      The CO2 fertilization effect or carbon fertilization effect causes an increased rate of photosynthesis while limiting leaf transpiration in plants. Both processes result from increased levels of atmospheric carbon dioxide (CO2).[2][3] The carbon fertilization effect varies depending on plant species, air and soil temperature, and availability of water and nutrients.[4][5] Net primary productivity (NPP) might positively respond to the carbon fertilization effect.[6] Although, evidence shows that enhanced rates of photosynthesis in plants due to CO2 fertilization do not directly enhance all plant growth, and thus carbon storage.[4] The carbon fertilization effect has been reported to be the cause of 44% of gross primary productivity (GPP) increase since the 2000s.[1] Earth System Models, Land System Models and Dynamic Global Vegetation Models are used to investigate and interpret vegetation trends related to increasing levels of atmospheric CO2.[4][7] However, the ecosystem processes associated with the CO2 fertilization effect remain uncertain and therefore are challenging to model.[8][9]
+
+      Terrestrial ecosystems have reduced atmospheric CO2 concentrations and have partially mitigated climate change effects.[10] The response by plants to the carbon fertilization effect is unlikely to significantly reduce atmospheric CO2 concentration over the next century due to the increasing anthropogenic influences on atmospheric CO2.[3][4][11][12] Earth's vegetated lands have shown significant greening since the early 1980s[13] largely due to rising levels of atmospheric CO2.[14][15][16][17]
+      
+      Theory predicts the tropics to have the largest uptake due to the carbon fertilization effect, but this has not been observed. The amount of CO2 uptake from CO2 fertilization also depends on how forests respond to climate change, and if they are protected from deforestation.[18]
+      
+      Changes in atmospheric carbon dioxide may reduce the nutritional quality of some crops, with for instance wheat having less protein and less of some minerals.[19]: 439 [20] Food crops could see a reduction of protein, iron and zinc content in common food crops of 3 to 17%.[21]
+      Mechanism
+      Main article: Photosynthesis
+      
+      Through photosynthesis, plants use CO2 from the atmosphere, water from the ground, and energy from the sun to create sugars used for growth and fuel.[22] While using these sugars as fuel releases carbon back into the atmosphere (photorespiration), growth stores carbon in the physical structures of the plant (i.e. leaves, wood, or non-woody stems).[23] With about 19 percent of Earth's carbon stored in plants,[24] plant growth plays an important role in storing carbon on the ground rather than in the atmosphere. In the context of carbon storage, growth of plants is often referred to as biomass productivity.[23][25][26] This term is used because researchers compare the growth of different plant communities by their biomass, amount of carbon they contain.
+      
+      Increased biomass productivity directly increases the amount of carbon stored in plants.[23] And because researchers are interested in carbon storage, they are interested in where most of the biomass is found in individual plants or in an ecosystem. Plants will first use their available resources for survival and support the growth and maintenance of the most important tissues like leaves and fine roots which have short lives.[27] With more resources available plants can grow more permanent, but less necessary tissues like wood.[27]
+      
+      If the air surrounding plants has a higher concentration of carbon dioxide, they may be able to grow better and store more carbon[28] and also store carbon in more permanent structures like wood.[23] Evidence has shown this occurring for a few different reasons. First, plants that were otherwise limited by carbon or light availability benefit from a higher concentration of carbon.[29] Another reason is that plants are able use water more efficiently because of reduced stomatal conductance.[30] Plants experiencing higher CO2 concentrations may benefit from a greater ability to gain nutrients from mycorrhizal fungi in the sugar-for-nutrients transaction.[31] The same interaction can may also increase the amount of carbon stored in the soil by mycorrhizal fungi.[32]
+      Observations and trends
+      
+      From 2002 to 2014, plants appear to have gone into overdrive, starting to pull more CO2 out of the air than they have done before.[33] The result was that the rate at which CO2 accumulates in the atmosphere did not increase during this time period, although previously, it had grown considerably in concert with growing greenhouse gas emissions.[33]
+      
+      A 1993 review of scientific greenhouse studies found that a doubling of CO2 concentration would stimulate the growth of 156 different plant species by an average of 37%. Response varied significantly by species, with some showing much greater gains and a few showing a loss. For example, a 1979 greenhouse study found that with doubled CO2 concentration the dry weight of 40-day-old cotton plants doubled, but the dry weight of 30-day-old maize plants increased by only 20%.[34][35]
+      
+      In addition to greenhouse studies, field and satellite measurements attempt to understand the effect of increased CO2 in more natural environments. In free-air carbon dioxide enrichment (FACE) experiments plants are grown in field plots and the CO2 concentration of the surrounding air is artificially elevated. These experiments generally use lower CO2 levels than the greenhouse studies. They show lower gains in growth than greenhouse studies, with the gains depending heavily on the species under study. A 2005 review of 12 experiments at 475–600 ppm showed an average gain of 17% in crop yield, with legumes typically showing a greater response than other species and C4 plants generally showing less. The review also stated that the experiments have their own limitations. The studied CO2 levels were lower, and most of the experiments were carried out in temperate regions.[36] Satellite measurements found increasing leaf area index for 25% to 50% of Earth's vegetated area over the past 35 years (i.e., a greening of the planet), providing evidence for a positive CO2 fertilization effect.[37][38]
+      
+      Depending on environment, there are differential responses to elevated atmospheric CO2 between major 'functional types' of plant, such as C3 and C4 plants, or more or less woody species; which has the potential among other things to alter competition between these groups.[39][40] Increased CO2 can also lead to increased Carbon : Nitrogen ratios in the leaves of plants or in other aspects of leaf chemistry, possibly changing herbivore nutrition.[41] Studies show that doubled concentrations of CO2 will show an increase in photosynthesis in C3 plants but not in C4 plants.[42] However, it is also shown that C4 plants are able to persist in drought better than the C3 plants.[43]
+      Experimentation by enrichment
+      
+      The effects of CO2 enrichment can be most simply attained in a greenhouse (see Greenhouse § Carbon dioxide enrichment for its agricultural use). However, for experimentation, the results obtained in a greenhouse would be doubted due to it introducing too many confounding variables. Open-air chambers have been similarly doubted, with some critiques attributing, e.g., a decline in mineral concentrations found in these CO2-enrichment experiments to constraints put on the root system. The current state-of-the art is the FACE methodology, where CO2 is put out directly in the open field.[44] Even then, there are doubts over whether the results of FACE in one part of the world applies to another.[45]
+      Free-Air CO2 Enrichment (FACE) experiments
+      Main article: Free-air concentration enrichment
+      
+      The ORNL conducted FACE experiments where CO2 levels were increased above ambient levels in forest stands.[46] These experiments showed:[47]
+      
+          Increased root production stimulated by increased CO2, resulting in more soil carbon.
+          An initial increase of net primary productivity, which was not sustained.
+          Faster decline in nitrogen availability in increased CO2 forest plots.
+          Change in plant community structure, with minimal change in microbial community structure.[48]
+          Enhanced CO2 cannot significantly increase the leaf carrying capacity or leaf area index of an area.[48]
+      
+      FACE experiments have been criticized as not being representative of the entire globe. These experiments were not meant to be extrapolated globally. Similar experiments are being conducted in other regions such as in the Amazon rainforest in Brazil.[45]
+    </section>
+</body>
+</html>

@@ -89,5 +89,5 @@ docker build -t pagedmedia/pagedjs-cli .
 Run the Docker image
 
 ```bash
-docker run -it --security-opt 'seccomp=seccomp.json' pagedmedia/pagedjs-cli bash
+docker run -it --init --security-opt 'seccomp=seccomp.json' pagedmedia/pagedjs-cli bash
 ```
