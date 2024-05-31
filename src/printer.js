@@ -3,6 +3,9 @@ import puppeteer from "puppeteer";
 
 import path from "path";
 import fs from "fs";
+import { mkdtemp, cp } from "fs/promises";
+import { tmpdir } from "os";
+import { join } from "node:path";
 import { fileURLToPath } from "url";
 
 import { PDFDocument } from "pdf-lib";
@@ -46,11 +49,19 @@ class Printer extends EventEmitter {
 	}
 
 	async setup() {
+		let tmpDir = await mkdtemp(join(tmpdir(), "pagedjs-"));
+
 		let puppeteerOptions = {
 			headless: this.headless,
-			args: ["--disable-dev-shm-usage", "--export-tagged-pdf"],
-			ignoreHTTPSErrors: this.ignoreHTTPSErrors
+			args: [],
+			ignoreHTTPSErrors: this.ignoreHTTPSErrors,
+			userDataDir: tmpDir
 		};
+
+		if (process.platform === "linux") {
+			cp(path.resolve(path.dirname(currentPath), "../docker-userdata"), tmpDir, { recursive: true });
+			puppeteerOptions.ignoreDefaultArgs = ["--disable-component-update"];
+		}
 
 		if (this.allowLocal) {
 			puppeteerOptions.args.push("--allow-file-access-from-files");
