@@ -50,6 +50,7 @@ pagedjs-cli ./path/to/index.html -o result.pdf
 --warn                               Enable warning logs
 --extra-header <header:value>        Header to be added to the page request. (default: [])
 --help                               display help for command
+--disable-script-injection           Disable in injection of the polyphill script.
 ```
 
 ## Development

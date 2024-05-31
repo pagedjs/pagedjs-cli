@@ -44,6 +44,7 @@ program
 	.option("--media [media]", "Emulate \"print\" or \"screen\" media, defaults to print.")
 	.option("--style <style>", "Path to CSS stylesheets to be added before rendering", collect, [])
 	.option("--warn", "Enable warning logs")
+	.option("--disable-script-injection", "Disable in injection of the polyphill script.")
 	.option("--extra-header <header:value>", "Header to be added to the page request.", collect, [])
 	.parse(process.argv);
 
@@ -127,6 +128,7 @@ if (typeof input === "string") {
 		browserArgs: options.browserArgs,
 		emulateMedia: options.media,
 		enableWarnings: options.warn,
+		disableScriptInjection: options.disableScriptInjection,
 		extraHTTPHeaders: extraHTTPHeaders
 	};
 

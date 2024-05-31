@@ -34,6 +34,7 @@ class Printer extends EventEmitter {
 		this.emulateMedia = options.emulateMedia || "print";
 		this.styles = options.styles || [];
 		this.enableWarnings = options.enableWarnings || false;
+		this.disableScriptInjection = options.disableScriptInjection || false;
 		this.extraHTTPHeaders = options.extraHTTPHeaders || {};
 
 		this.pages = [];
@@ -142,6 +143,12 @@ class Printer extends EventEmitter {
 				});	
 			}
 
+			if (this.disableScriptInjection) {
+				await page.evaluateOnNewDocument(() => {
+					window.PagedConfig = { auto: false };
+				});
+			}
+
 			if (html) {
 				await page.setContent(html);
 
@@ -162,20 +169,22 @@ class Printer extends EventEmitter {
 
 			this.content = await page.content();
 
-			await page.evaluate(() => {
-				window.PagedConfig = window.PagedConfig || {};
-				window.PagedConfig.auto = false;
-			});
+			if (!this.disableScriptInjection) {
+				await page.evaluate(() => {
+					window.PagedConfig = window.PagedConfig || {};
+					window.PagedConfig.auto = false;
+				});
+
+				await page.addScriptTag({
+					path: scriptPath
+				});
+			}
 
 			for (const style of this.styles) {
 				await page.addStyleTag({
 					[this.isUrl(style) ? "url" : "path"]: style
 				});
 			}
-
-			await page.addScriptTag({
-				path: scriptPath
-			});
 
 			for (const script of this.additionalScripts) {
 				await page.addScriptTag({
