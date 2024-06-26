@@ -73,7 +73,7 @@ ENV PLAYWRIGHT_BROWSERS_PATH=/usr/local/bin/chromium-browsers
 # Revision from https://github.com/microsoft/playwright/blob/main/packages/playwright-core/browsers.json#L6
 ENV BROWSER_REVISION=1097
 ENV PUPPETEER_EXECUTABLE_PATH="$PLAYWRIGHT_BROWSERS_PATH/chromium-$BROWSER_REVISION/chrome-linux/chrome"
-RUN npm install playwright@1.41.1 --location=global
+RUN npm install playwright --location=global
 RUN playwright install --with-deps chromium
 
 RUN npm install node-gyp --location=global

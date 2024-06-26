@@ -1,6 +1,6 @@
 {
   "name": "pagedjs-cli",
-  "version": "0.4.3",
+  "version": "0.5.0-beta.1",
   "author": "Fred Chasen",
   "license": "MIT",
   "homepage": "https://pagedjs.org",
@@ -24,26 +24,26 @@
     "prepare": "npm run build"
   },
   "dependencies": {
-    "commander": "^11.1.0",
-    "express": "^4.18.2",
-    "html-entities": "^2.4.0",
-    "katex": "^0.16.9",
+    "commander": "^12.1.0",
+    "express": "^4.19.2",
+    "html-entities": "^2.5.2",
+    "katex": "^0.16.10",
     "lodash": "^4.17.21",
     "mathjax": "^3.2.2",
     "node-fetch": "^3.3.2",
     "ora": "^8.0.1",
-    "pagedjs": "^0.4.3",
+    "pagedjs": "0.5.0-beta.1",
     "pdf-lib": "1.17.1",
-    "puppeteer": "^21.9.0",
+    "puppeteer": "^22.12.0",
     "replace-ext": "^2.0.0"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-commonjs": "^26.0.1",
     "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^15.2.3",
-    "eslint": "^8.56.0",
-    "rollup": "^4.9.6",
-    "rollup-plugin-license": "^3.2.0",
+    "eslint": "^9.5.0",
+    "rollup": "^4.18.0",
+    "rollup-plugin-license": "^3.5.1",
     "rollup-plugin-serve": "^2.0.2"
   },
   "files": [
