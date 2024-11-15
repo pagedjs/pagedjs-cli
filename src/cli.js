@@ -70,8 +70,8 @@ try {
 
 const extraHTTPHeaders = options.extraHeader.reduce((acc, header) => {
 	const [name, ...value] = header.split(":");
-	return [ ...acc, { [name]: value.join(":") } ];
-}, []);
+	return { ...acc, [name]: value.join(":") };
+}, {});
 
 let output;
 
